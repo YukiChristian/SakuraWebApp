@@ -14,11 +14,11 @@ La app intenta mantener la página cargada en memoria mientras su proceso sigue 
 - Pantallas de carga y de error de conexión con opción para reintentar.
 - Selector de archivos con selección múltiple.
 - Permisos de micrófono y audio gestionados por Android y WebView.
-- Icono de Sakura. La variante negra se muestra abajo; el arte original está en [assets/sakura-original.png](assets/sakura-original.png).
+- Icono de Sakura sobre fondo transparente; el arte original está en [assets/sakura-original.png](assets/sakura-original.png).
 - **TTS opcional:** Qwen3-TTS Fast es el proveedor usado en esta instalación de ejemplo. No es requisito; puedes configurar otro proveedor de texto a voz compatible con tu instancia de Open WebUI, o no usar TTS.
 
 <div align="center">
-  <img src="assets/sakura-icon-black.png" alt="Flor de Sakura sobre fondo negro" width="160">
+  <img src="assets/sakura-icon.png" alt="Flor de Sakura con fondo transparente" width="160">
 </div>
 
 ## 🖼️ Capturas
