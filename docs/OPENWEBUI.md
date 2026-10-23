@@ -38,7 +38,11 @@ La instalación que se usó tenía un lanzador `run_open_webui_https.py` que ini
 
 Open WebUI guarda los datos de usuario en `DATA_DIR`. Si se inicia con una carpeta diferente o vacía, puede aparecer de nuevo el formulario de creación de la cuenta administradora aunque los datos anteriores sigan en otra ubicación. Verifica `DATA_DIR` antes de crear otra cuenta. No borres la carpeta `data` ni regeneres `WEBUI_SECRET_KEY` de forma accidental.
 
-## Configurar Qwen3-TTS Fast
+## TTS es opcional: configurar Qwen3-TTS u otro proveedor
+
+SakuraWebApp no incluye ni requiere un motor TTS específico. El texto a voz se configura en Open WebUI; puedes usar cualquier proveedor compatible con la versión de Open WebUI que tengas, o dejar la función desactivada. Revisa el endpoint, modelo, credenciales y requisitos de red del proveedor elegido. El ejemplo siguiente documenta Qwen3-TTS Fast porque es el que se usó en esta instalación; puedes omitirlo si usarás otro servicio.
+
+### Ejemplo: Qwen3-TTS Fast
 
 En una segunda terminal de Windows, inicia el servidor WSL y deja la ventana abierta mientras uses voz:
 
