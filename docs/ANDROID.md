@@ -8,6 +8,38 @@ La app habilita cookies y DOM storage, y guarda/restaura el estado de navegació
 
 SakuraWebApp es la capa Android y Open WebUI sigue siendo el servidor que contiene la interfaz, cuenta, chats y configuración. La app no copia ni sustituye el perfil del servidor. Al iniciar una actividad nueva, abre la página principal configurada. La pantalla Sakura muestra versión y animación durante al menos tres segundos; una conexión fallida pasa a un mensaje de error después de cinco segundos y ofrece reintentar.
 
+## Compilar la app Android
+
+Esta tabla distingue la versión de Android que puede instalar la app del SDK usado para compilarla:
+
+| Configuración | Valor del proyecto | Significado |
+|---|---:|---|
+| Android mínimo (minSdk) | API 23 / Android 6.0 | Versión mínima admitida por el APK |
+| Android objetivo (targetSdk) | API 36 / Android 16 | Comportamientos del sistema para los que se configura |
+| SDK de compilación (compileSdk) | API 37 / Android 17 | SDK que debe instalarse para compilar; el teléfono no requiere Android 17 |
+| SakuraWebApp | 0.1.7 (versionCode 18) | Versión actual del proyecto |
+| Android Gradle Plugin | 9.4.1 | Plugin de compilación Android |
+| Gradle Wrapper | 9.6.0 | Versión incluida y usada por el proyecto |
+| Kotlin | 2.2.10 | Versión configurada del plugin de Kotlin |
+| JDK para ejecutar Gradle | 17 | JVM usada por Android Studio/Gradle |
+| Compatibilidad del código Java | 11 | Nivel de lenguaje configurado |
+
+Instala Android Studio compatible con AGP 9.4.x, JDK 17 y **Android SDK Platform 37** desde **Tools → SDK Manager → SDK Platforms**. No necesitas instalar Gradle por separado; el wrapper del proyecto usa Gradle 9.6.0. El teléfono Android 16 de referencia corresponde a API 36. El SDK 37 solo se necesita en la computadora para compilar.
+
+Abre en Android Studio la carpeta raíz del proyecto. En la pestaña **Terminal**, desde esa carpeta, ejecuta:
+
+```powershell
+.\gradlew.bat assembleDebug -PSAKURA_WEBUI_URL="https://<IP-o-host-del-PC>:8081/"
+```
+
+Reemplaza el marcador por la dirección HTTPS que el teléfono pueda alcanzar y quita los signos `< >`. No publiques una IP privada. La sección siguiente explica qué valores de host deben coincidir.
+
+El APK se genera en `app/build/outputs/apk/debug/` (normalmente `app-debug.apk`). Si el SDK Platform 37 no aparece instalado, Gradle informará el error; instálalo en SDK Manager y ejecuta de nuevo el comando. Si el servidor usa una CA local, sigue primero la guía [HTTPS y certificados](HTTPS.md) y agrega su certificado público al build local.
+
+El comando incluye la URL de tu servidor. Si usas el menú **Build → Build APK(s)** sin configurar esa propiedad, el proyecto conserva el host de ejemplo y el APK no podrá encontrar tu Open WebUI.
+
+Referencias oficiales: [compatibilidad de Android Gradle Plugin](https://developer.android.com/build/releases/about-agp), [JDK para builds Android](https://developer.android.com/build/jdks), [Android 16 / API 36](https://developer.android.com/tools/releases/platforms#android_16), [Android 17 / API 37](https://developer.android.com/about/versions/17/release-notes).
+
 ## Qué host/IP se configura
 
 Se configura la dirección del equipo Windows donde corre Open WebUI, en HTTPS y puerto 8081; no la dirección del teléfono ni `127.0.0.1`. En la versión local se usaba una IP privada de LAN. El repositorio público la reemplaza por `https://open-webui.example:8081/` para no publicar la dirección doméstica.
