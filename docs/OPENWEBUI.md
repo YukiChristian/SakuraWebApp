@@ -2,9 +2,15 @@
 
 ## Versiones y nombres de modelo
 
-La instalación local consultada el 22 de octubre de 2026 tiene Open WebUI **0.12.3**. En la interfaz, el modelo aparece con el nombre **Sakura**. Ese nombre visible es una etiqueta; el identificador del modelo/proveedor LLM que la etiqueta apunta no se pudo confirmar en los archivos de proyecto disponibles, así que no se inventa aquí.
+La instalación local consultada el 22 de octubre de 2026 tiene Open WebUI **0.12.3**. El nombre visible configurado en Open WebUI es **Sakura**. Los registros de llama-server compartidos muestran la carga del modelo `SoAIHQ/Qwen3.5-9B-GGUF:Q4_K_M`: Qwen 3.5 de 9 mil millones de parámetros en formato GGUF con cuantización Q4_K_M. El log también indica un proyector multimodal `mmproj-Qwen3.5-9B-f16.gguf`. Por tanto, **llama.cpp es el motor/servidor de inferencia; el modelo cargado es Qwen 3.5, no un modelo de la familia Llama**. El nombre Sakura es el alias que se muestra en la interfaz.
 
-Qwen3-TTS Fast es el servicio de voz independiente. Su modelo reportado en los registros/configuración es `qwen3-tts-clone-0.6b`. Open WebUI lo llama mediante un endpoint compatible con OpenAI; no es el modelo LLM que genera la respuesta.
+Qwen3-TTS Fast es el servicio de voz independiente de este ejemplo. Su modelo reportado en los registros/configuración es `qwen3-tts-clone-0.6b`. Open WebUI lo llama mediante un endpoint compatible con OpenAI; no es el modelo LLM que genera la respuesta. **No necesitas instalar ni usar Qwen3-TTS**: configura cualquier proveedor TTS compatible con tu versión de Open WebUI, o deja el TTS desactivado.
+
+## Servidor LLM llama.cpp (Qwen 3.5)
+
+El registro proporcionado identifica un servidor `llama-server` escuchando en el puerto **50002**, con el modelo `SoAIHQ/Qwen3.5-9B-GGUF:Q4_K_M`, métricas activadas y cuatro slots de generación. La ruta local de los archivos del modelo y del proyector no se publica porque solo es válida en esa computadora. Configura el proveedor OpenAI-compatible de Open WebUI para apuntar al endpoint de llama.cpp que sea alcanzable desde el proceso Open WebUI.
+
+El mismo registro muestra la advertencia **“no API key is set and CORS allows all origins”**. No expongas ese servidor sin protección a Internet. Para otros despliegues, habilita una API key, restringe CORS al origen que necesita Open WebUI, usa el firewall y limita el acceso a la red privada o VPN. El ejemplo de esta instalación debe considerarse una configuración de laboratorio, no un valor seguro para copiar tal cual.
 
 ## Arranque manual de Open WebUI
 
