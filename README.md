@@ -1,12 +1,18 @@
 # 🌸 SakuraWebApp 📱 v0.1.7
 
-SakuraWebApp es una aplicación Android instalada que presenta la interfaz de tu servidor Open WebUI dentro de su propio WebView. No es solo un acceso directo ni una pestaña de Chrome: conserva las cookies, la sesión y el estado de navegación mientras Android mantiene la app en memoria. Así, al volver desde otra aplicación, puedes continuar donde estabas sin esperar a que Chrome restaure una pestaña. Android puede cerrar apps en segundo plano si necesita recursos; en ese caso SakuraWebApp vuelve a cargar Open WebUI y la sesión guardada ayuda a mantener el acceso.
+## ¿Qué es SakuraWebApp?
 
-## 🎯 Objetivo general
+SakuraWebApp es una app para Android que abre Open WebUI dentro de la propia app. Open WebUI sigue funcionando en tu computadora o servidor; SakuraWebApp es la forma de usarlo desde el teléfono. Mientras Android mantenga la app abierta en segundo plano, conserva la sesión y el lugar donde estabas. Si Android la cierra para liberar memoria, la app vuelve a cargar la página al abrirla.
 
-Crear una aplicación Android basada en Open WebUI que se sienta y funcione como una app: abrir directamente el chat, conservar cookies y almacenamiento web, manejar micrófono y selección de archivos, y mostrar estados claros de carga y conexión. Al iniciar, Sakura muestra su flor, la versión y una animación mientras conecta con el servidor; si Open WebUI no responde, aparece una pantalla de error con un botón para reintentar. Cuando el servidor responde, se muestra la página completa de Open WebUI dentro de la app.
+## ¿Qué problema resuelve?
 
-La app intenta mantener la página cargada en memoria mientras su proceso sigue activo, para volver al chat con fluidez. Android puede cerrar procesos en segundo plano cuando necesita memoria; por eso no se promete que la página permanezca siempre viva. En ese caso, la app puede volver a cargar Open WebUI, mientras que las cookies y el almacenamiento web ayudan a conservar el inicio de sesión. Los chats, el perfil y la configuración pertenecen al servidor y permanecen en su carpeta de datos.
+Si abres Open WebUI en Chrome y cambias a otra app, el teléfono puede cerrar esa pestaña para ahorrar memoria. Al regresar, Chrome podría cargarla de nuevo. Además, para que el micrófono, la selección de archivos y el teclado funcionen bien dentro de una app, Android necesita que esas funciones estén conectadas correctamente con la página.
+
+SakuraWebApp abre Open WebUI en una ventana interna de Android y agrega esa conexión. Al iniciar muestra la flor y la versión mientras carga. Si no logra conectar, enseña un mensaje con un botón para volver a intentarlo.
+
+## Objetivo general
+
+Compartir un ejemplo completo y una guía clara para que otras personas puedan conectar su propia instalación de Open WebUI y crear una app Android para usarla en sus teléfonos. Cada persona puede adaptar la dirección de su servidor, sus certificados y las funciones de voz que prefiera.
 
 ## ✨ Qué incluye
 
