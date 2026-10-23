@@ -28,10 +28,6 @@ Compartir un ejemplo completo y una guía clara para que otras personas puedan c
   <img src="assets/sakura-icon.png" alt="Flor de Sakura con fondo transparente" width="160">
 </div>
 
-## 💡 Ideas para futuras versiones
-
-- Mostrar una notificación de Android cuando Sakura termine de responder mientras estás usando otra app. Al tocarla, volver al chat correspondiente.
-
 ## 🖼️ Capturas
 
 Las capturas muestran la animación de inicio mientras conecta, la pantalla de error si el servidor no responde, el inicio de sesión, la pantalla principal, el modo de voz, los ajustes de Open WebUI y el icono instalado en Android.
