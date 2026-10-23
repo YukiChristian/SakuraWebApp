@@ -16,7 +16,7 @@ Compartir un ejemplo completo y una guía clara para que otras personas puedan c
 
 ## ✨ Qué incluye
 
-- Aplicación Android con WebView, sesión persistente y navegación hacia atrás.
+- Open WebUI se abre dentro de la app Android, que permite volver atrás y conserva la sesión mientras Android la mantenga activa.
 - Pantallas de carga y de error de conexión con opción para reintentar.
 - Al tocar **Subir Archivos**, se abre el selector del sistema Android para elegir uno o varios archivos o imágenes.
 - Compatibilidad con el teclado de Android: la pantalla se reajusta para mantener visible el cuadro de mensaje y sus controles.
