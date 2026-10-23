@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val sakuraWebUiUrl = providers.gradleProperty("SAKURA_WEBUI_URL")
+    .orElse("https://open-webui.example:8081/")
+    .get()
+
 android {
     namespace = "com.sakura.webapp"
     compileSdk {
@@ -13,6 +17,7 @@ android {
         applicationId = "com.sakura.webapp"
         minSdk = 23
         targetSdk = 36
+        buildConfigField("String", "WEBUI_URL", "\"$sakuraWebUiUrl\"")
         versionCode = 18
         versionName = "0.1.7"
 
