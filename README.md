@@ -1,10 +1,10 @@
 # 🌸 SakuraWebApp 📱
 
-SakuraWebApp empaqueta la interfaz de Open WebUI en una aplicación Android instalada. El objetivo es ofrecer una experiencia de app completa y conservar la sesión web y el estado de navegación mientras Android mantiene la aplicación abierta, en lugar de depender de una pestaña de Chrome que puede descartarse al cambiar de aplicación y recargarse al volver.
+SakuraWebApp es una aplicación Android instalada que presenta la interfaz de tu servidor Open WebUI dentro de su propio WebView. No es solo un acceso directo ni una pestaña de Chrome: conserva las cookies, la sesión y el estado de navegación mientras Android mantiene la app en memoria. Así, al volver desde otra aplicación, puedes continuar donde estabas sin esperar a que Chrome restaure una pestaña. Android puede cerrar apps en segundo plano si necesita recursos; en ese caso SakuraWebApp vuelve a cargar Open WebUI y la sesión guardada ayuda a mantener el acceso.
 
 ## 🎯 Objetivo general
 
-Crear una aplicación Android basada en Open WebUI que se sienta y funcione como una app: abrir directamente el chat, conservar cookies y almacenamiento web, manejar micrófono y selección de archivos, y mostrar estados claros de carga y conexión. Open WebUI sigue proporcionando la interfaz y el servidor; SakuraWebApp la presenta dentro de un WebView integrado en Android.
+Crear una aplicación Android basada en Open WebUI que se sienta y funcione como una app: abrir directamente el chat, conservar cookies y almacenamiento web, manejar micrófono y selección de archivos, y mostrar estados claros de carga y conexión. Al iniciar, Sakura muestra su flor, la versión y una animación mientras conecta con el servidor; si Open WebUI no responde, aparece una pantalla de error con un botón para reintentar. Cuando el servidor responde, se muestra la página completa de Open WebUI dentro de la app.
 
 La app intenta mantener la página cargada en memoria mientras su proceso sigue activo, para volver al chat con fluidez. Android puede cerrar procesos en segundo plano cuando necesita memoria; por eso no se promete que la página permanezca siempre viva. En ese caso, la app puede volver a cargar Open WebUI, mientras que las cookies y el almacenamiento web ayudan a conservar el inicio de sesión. Los chats, el perfil y la configuración pertenecen al servidor y permanecen en su carpeta de datos.
 
@@ -23,10 +23,14 @@ La app intenta mantener la página cargada en memoria mientras su proceso sigue 
 
 ## 🖼️ Capturas
 
-Las capturas muestran el inicio de sesión, la pantalla principal, el modo de voz, los ajustes de Open WebUI y el icono instalado en el lanzador de Android.
+Las capturas muestran la animación de inicio mientras conecta, la pantalla de error si el servidor no responde, el inicio de sesión, la pantalla principal, el modo de voz, los ajustes de Open WebUI y el icono instalado en Android.
 
 <details>
 <summary>Ver capturas de SakuraWebApp</summary>
+
+| Cargando Open WebUI | Sin conexión |
+|:--:|:--:|
+| <img src="docs/images/loading.png" alt="Pantalla de Sakura cargando y conectando con Open WebUI" width="240"> | <img src="docs/images/connection-error.png" alt="Pantalla de error de conexión con botón para reintentar" width="240"> |
 
 | Iniciar sesión | Pantalla principal |
 |:--:|:--:|
