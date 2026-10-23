@@ -48,7 +48,8 @@ Las capturas muestran el inicio de sesión, la pantalla principal, el modo de vo
 - Open WebUI: **0.12.3**, versión verificada en la instalación local.
 - Modelo visible en Open WebUI: **Sakura**. El identificador/proveedor del modelo LLM que sirve esa etiqueta no está incluido en la documentación disponible.
 - Voz de ejemplo: Qwen3-TTS Fast compatible con API de OpenAI, modelo **qwen3-tts-clone-0.6b**, puerto local **5052**. Puedes reemplazarlo por otro TTS.
-- Android: minSdk 23, targetSdk 36, compileSdk 37.
+- Android de referencia: Android 16 (API 36). La app declara minSdk 23 (Android 6.0), targetSdk 36 (Android 16) y compileSdk 37 (Android 17/API 37). compileSdk es la plataforma usada al compilar; no significa que el teléfono necesite Android 17.
+- Herramientas fijadas en el proyecto: Android Gradle Plugin 9.4.1, Gradle 9.6.0, Kotlin 2.2.10 y JDK 17 para ejecutar Gradle. El código Java usa compatibilidad de lenguaje 11.
 - La activación por palabra “Oye, Sakura” queda como idea futura; no está implementada.
 
 ## 🚀 Pasos para usar o adaptar el proyecto
@@ -67,7 +68,22 @@ Las guías detallan la instalación del servidor, las variables, los certificado
 
 ## 🛠️ Compilar
 
-Necesitas Android Studio, Android SDK y el JDK requerido por el proyecto. En Windows, desde la raíz del proyecto:
+### Requisitos y versiones de Android
+
+Instala Android Studio compatible con Android Gradle Plugin 9.4.x, Android SDK Platform 37 y JDK 17. El proyecto usa Gradle 9.6.0 mediante el wrapper incluido, así que no necesitas instalar Gradle por separado. En Android Studio puedes revisar el JDK en **Settings → Build, Execution, Deployment → Build Tools → Gradle → Gradle JDK**.
+
+| Ajuste | Valor | Qué significa |
+|---|---|---|
+| Android mínimo | API 23 / Android 6.0 | Versión mínima para instalar la app |
+| Android objetivo | API 36 / Android 16 | Comportamientos de Android para los que está configurada |
+| SDK de compilación | API 37 / Android 17 | Plataforma necesaria para compilar; no es requisito para el teléfono |
+| Versión de SakuraWebApp | 0.1.7 (versionCode 18) | Versión del APK de este repositorio |
+
+La versión de Android de tu teléfono es independiente del SDK de compilación. En el dispositivo Android 16 de referencia, la app funciona con target API 36.
+
+### Comando exacto para compilar
+
+Desde Android Studio abre la carpeta raíz del proyecto. En la terminal integrada de Android Studio, desde esa carpeta, ejecuta:
 
 ```powershell
 .\gradlew.bat assembleDebug -PSAKURA_WEBUI_URL="https://<IP-o-host-del-servidor>:8081/"
@@ -75,7 +91,9 @@ Necesitas Android Studio, Android SDK y el JDK requerido por el proyecto. En Win
 
 El host es el equipo que ejecuta Open WebUI, no el teléfono. Usa una dirección que el teléfono pueda alcanzar por Wi-Fi o VPN. Una IP privada de la red local no es accesible por datos móviles sin una ruta o VPN configurada.
 
-El APK de depuración queda en `app/build/outputs/apk/debug/`. Instala una actualización encima de la app existente para conservar los datos locales; desinstalarla puede borrar la sesión del WebView. La compilación debug no es un APK firmado para Google Play.
+Si el SDK Platform 37 no está instalado, abre **Tools → SDK Manager → SDK Platforms** y marca Android API 37. Después vuelve a ejecutar el comando. El APK de depuración queda en `app/build/outputs/apk/debug/app-debug.apk` (si Gradle aplica `archivesBaseName`, el nombre puede variar). En Android Studio también puedes usar **Build → Build Bundle(s) / APK(s) → Build APK(s)**; al terminar, pulsa el enlace **locate** del aviso para abrir la carpeta.
+
+Instala una actualización encima de la app existente para conservar los datos locales; desinstalarla puede borrar la sesión del WebView. La compilación debug no es un APK firmado para Google Play.
 
 ## 🔐 Privacidad
 
