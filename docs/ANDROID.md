@@ -22,7 +22,7 @@ Gradle la incorpora en `BuildConfig.WEBUI_URL`; `MainActivity.kt` la usa para ab
 
 ## Ícono y la imagen de Sakura
 
-La imagen original `sakura.png` la proporcionaste para la app. Android Studio la convirtió en recursos del lanzador para distintas densidades y en un primer plano adaptable, que están en `app/src/main/res/drawable`, `drawable-nodpi` y `mipmap-*`. El manifiesto selecciona `@mipmap/ic_launcher` y `@mipmap/ic_launcher_round`.
+La imagen original `sakura.png` se conserva en `assets/sakura-original.png`. La variante de flor sobre fondo negro está en `assets/sakura-icon-black.png`; se preparó para esta documentación y no cambia automáticamente el icono instalado de la app. Android Studio convirtió el arte de la app en recursos del lanzador para distintas densidades y en un primer plano adaptable, que están en `app/src/main/res/drawable`, `drawable-nodpi` y `mipmap-*`. El manifiesto selecciona `@mipmap/ic_launcher` y `@mipmap/ic_launcher_round`.
 
 Para cambiarla desde Android Studio:
 
