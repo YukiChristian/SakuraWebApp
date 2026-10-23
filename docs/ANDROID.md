@@ -81,7 +81,7 @@ Concede también el permiso en Android: **Ajustes → Aplicaciones → SakuraWeb
 
 ## Selector de archivos e imágenes múltiples
 
-El menú “Subir Archivos” de Open WebUI necesita que la app responda a `WebChromeClient.onShowFileChooser`; un WebView sin esa integración puede no abrir nada.
+Al tocar “Subir Archivos” en Open WebUI, SakuraWebApp abre el selector de documentos del sistema Android. No depende de un explorador incrustado en la página: la app conecta el WebView con el selector nativo mediante `WebChromeClient.onShowFileChooser`.
 
 La app lanza `ACTION_OPEN_DOCUMENT` con `CATEGORY_OPENABLE`, tipo `*/*` y `EXTRA_ALLOW_MULTIPLE=true`. Al volver, procesa `ClipData` para varios elementos y `Intent.data` para un solo elemento, y entrega todos los URI al callback de la página. Android otorga acceso a los elementos que el usuario eligió, por lo que no se concede permiso general de almacenamiento. La elección del sistema admite seleccionar varias imágenes/archivos en una operación. Es el flujo recomendado de [ACTION_OPEN_DOCUMENT](https://developer.android.com/reference/android/content/Intent#ACTION_OPEN_DOCUMENT).
 
