@@ -8,7 +8,7 @@ SakuraWebApp es una app para Android que mejora la experiencia de Open WebUI en 
 
 Si abres Open WebUI en Chrome y cambias a otra app, el teléfono puede cerrar esa pestaña para ahorrar memoria. Al regresar, Chrome puede cargar la página otra vez y hacerte perder el punto exacto donde estabas trabajando o tener que volver a buscar la conversación. Esto no borra el chat guardado en el servidor, pero interrumpe la continuidad de la actividad. Además, para que el micrófono, la selección de archivos y el teclado funcionen bien dentro de una app, Android necesita que esas funciones estén conectadas correctamente con la página.
 
-SakuraWebApp abre Open WebUI en una ventana interna de Android y agrega esa conexión. Al iniciar muestra la flor y la versión mientras carga. Si no logra conectar, enseña un mensaje con un botón para volver a intentarlo.
+SakuraWebApp adapta Open WebUI para usarlo desde una app instalada en Android. Lo abre en una ventana interna y conecta con funciones del teléfono como el teclado, el micrófono, el audio y el selector de archivos e imágenes. Al iniciar muestra la flor y la versión mientras carga. Si no logra conectar con el servidor, enseña un mensaje con un botón para volver a intentarlo.
 
 ## Objetivo general
 
