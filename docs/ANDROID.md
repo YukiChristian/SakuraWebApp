@@ -96,7 +96,11 @@ Para que la página pueda cerrar una vista previa de imagen a pantalla completa,
 
 ## Carga y error de conexión
 
-La pantalla de inicio muestra flor, versión y progreso. La app conserva el indicador mientras valida que el documento principal sí cargó, y no muestra la página web de error de Chromium como si fuera Open WebUI. Si el servidor no responde en cinco segundos, muestra “No hay conexión con Sakura”; el botón de reintento vuelve primero a la pantalla de carga y hace una nueva navegación.
+Al abrir o reanudar una nueva instancia de SakuraWebApp, primero aparece una pantalla propia de carga con la flor de Sakura, la versión de la app y una animación de progreso mientras intenta conectar. No es la pantalla de Open WebUI: es el estado de inicio de la app. Cuando el servidor responde, se oculta la carga y se muestra la interfaz completa de Open WebUI dentro del WebView. Si la página principal no carga en cinco segundos, la app presenta una pantalla propia de error “No hay conexión con Sakura”, en vez de dejar una página blanca o mostrar el error de Chromium. El botón **Reintentar** vuelve a mostrar la carga y realiza una nueva navegación. Android puede destruir el proceso en segundo plano; al abrir de nuevo, la carga vuelve a mostrarse.
+
+| Al conectar | Si no hay conexión |
+|:--:|:--:|
+| <img src="images/loading.png" alt="Pantalla de carga de Sakura mientras conecta con Open WebUI" width="240"> | <img src="images/connection-error.png" alt="Pantalla de error de conexión y botón para reintentar" width="240"> |
 
 El teléfono tiene que alcanzar el servidor: la IP local no funciona por datos móviles salvo que el servidor esté expuesto de forma segura o haya VPN/ruta. El texto de conexión no inicia el servidor.
 
