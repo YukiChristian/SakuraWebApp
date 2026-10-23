@@ -24,7 +24,7 @@ Esta tabla distingue la versión de Android que puede instalar la app del SDK us
 | JDK para ejecutar Gradle | 17 | JVM usada por Android Studio/Gradle |
 | Compatibilidad del código Java | 11 | Nivel de lenguaje configurado |
 
-Instala Android Studio compatible con AGP 9.4.x, JDK 17 y **Android SDK Platform 37** desde **Tools → SDK Manager → SDK Platforms**. No necesitas instalar Gradle por separado; el wrapper del proyecto usa Gradle 9.6.0. El teléfono Android 16 de referencia corresponde a API 36. El SDK 37 solo se necesita en la computadora para compilar.
+Instala Android Studio compatible con **Android Gradle Plugin 9.4.1**, JDK 17 y **Android SDK Platform API 37.0** desde **Tools → SDK Manager → SDK Platforms**. El proyecto declara `compileSdk { version = release(37) }`, que usa la plataforma base API 37.0. No hace falta instalar todas las plataformas de la lista: la entrada API 37.1 que aparece en tu captura es opcional y el proyecto no la fija. No necesitas instalar Gradle por separado; el wrapper usa Gradle 9.6.0. El teléfono Android 16 de referencia corresponde a API 36 y la app también tiene `targetSdk = 36`; Android SDK 37 se necesita en la computadora para compilar, no en el teléfono.
 
 Abre en Android Studio la carpeta raíz del proyecto. En la pestaña **Terminal**, desde esa carpeta, ejecuta:
 
@@ -34,7 +34,7 @@ Abre en Android Studio la carpeta raíz del proyecto. En la pestaña **Terminal*
 
 Reemplaza el marcador por la dirección HTTPS que el teléfono pueda alcanzar y quita los signos `< >`. No publiques una IP privada. La sección siguiente explica qué valores de host deben coincidir.
 
-El APK se genera en `app/build/outputs/apk/debug/` (normalmente `app-debug.apk`). Si el SDK Platform 37 no aparece instalado, Gradle informará el error; instálalo en SDK Manager y ejecuta de nuevo el comando. Si el servidor usa una CA local, sigue primero la guía [HTTPS y certificados](HTTPS.md) y agrega su certificado público al build local.
+El APK se genera en `app/build/outputs/apk/debug/` (normalmente `app-debug.apk`). Si Android SDK Platform API 37.0 no aparece instalado, Gradle informará el error; instálalo en SDK Manager y ejecuta de nuevo el comando. API 37.1 y las plataformas API 36, 35 o anteriores no son requisitos de compilación para esta configuración. Si el servidor usa una CA local, sigue primero la guía [HTTPS y certificados](HTTPS.md) y agrega su certificado público al build local.
 
 El comando incluye la URL de tu servidor. Si usas el menú **Build → Build APK(s)** sin configurar esa propiedad, el proyecto conserva el host de ejemplo y el APK no podrá encontrar tu Open WebUI.
 
