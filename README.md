@@ -12,7 +12,7 @@ La app intenta mantener la página cargada en memoria mientras su proceso sigue 
 
 - Aplicación Android con WebView, sesión persistente y navegación hacia atrás.
 - Pantallas de carga y de error de conexión con opción para reintentar.
-- Selector de archivos con selección múltiple.
+- Al tocar **Subir Archivos**, se abre el selector del sistema Android para elegir uno o varios archivos o imágenes.
 - Permisos de micrófono y audio gestionados por Android y WebView.
 - Icono de Sakura sobre fondo transparente; el arte original está en [assets/sakura-original.png](assets/sakura-original.png).
 - **TTS opcional:** Qwen3-TTS Fast es el proveedor usado en esta instalación de ejemplo. No es requisito; puedes configurar otro proveedor de texto a voz compatible con tu instancia de Open WebUI, o no usar TTS.
