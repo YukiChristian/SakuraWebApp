@@ -2,7 +2,7 @@
 
 ## ¿Qué es SakuraWebApp?
 
-SakuraWebApp es una app para Android que abre Open WebUI dentro de la propia app. Open WebUI sigue funcionando en tu computadora o servidor; SakuraWebApp es la forma de usarlo desde el teléfono. Mientras Android mantenga la app abierta en segundo plano, conserva la sesión y el lugar donde estabas. Si Android la cierra para liberar memoria, la app vuelve a cargar la página al abrirla.
+SakuraWebApp es una app para Android que mejora la experiencia de Open WebUI en el teléfono y lo abre dentro de la propia app. Open WebUI sigue funcionando en tu computadora o servidor; SakuraWebApp es la forma de usarlo desde el teléfono. Mientras Android mantenga la app abierta en segundo plano, conserva la sesión y el lugar donde estabas. Si Android la cierra para liberar memoria, la app vuelve a cargar la página al abrirla. Si no puede conectarse al servidor, muestra un aviso de que no hay conexión y ofrece volver a intentar.
 
 ## ¿Qué problema resuelve?
 
