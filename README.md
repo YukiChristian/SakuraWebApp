@@ -1,10 +1,12 @@
 # SakuraWebApp
 
-SakuraWebApp convierte tu instalación de Open WebUI en una experiencia de app Android: mantiene un WebView dentro de la aplicación, conserva su sesión web y vuelve a mostrar la página sin depender de una pestaña de Chrome que se descarte al salir. Open WebUI y sus datos siguen ejecutándose y almacenándose en tu propio equipo.
+SakuraWebApp empaqueta la interfaz de Open WebUI en una aplicación Android instalada. El objetivo es ofrecer una experiencia de app completa y conservar la sesión web y el estado de navegación mientras Android mantiene la aplicación abierta, en lugar de depender de una pestaña de Chrome que puede descartarse al cambiar de aplicación y recargarse al volver.
 
-## Objetivo
+## Objetivo general
 
-Crear una app web funcional alrededor de Open WebUI que Android pueda mantener como una aplicación instalada. La app ofrece un acceso directo, conserva las cookies y el almacenamiento de la sesión, maneja permisos de micrófono y selector de archivos, y muestra estados de carga/conexión. Open WebUI sigue siendo la interfaz y el servidor; SakuraWebApp es el contenedor Android.
+Crear una aplicación Android basada en Open WebUI que se sienta y funcione como una app: abrir directamente el chat, conservar cookies y almacenamiento web, manejar micrófono y selección de archivos, y mostrar estados claros de carga y conexión. Open WebUI sigue proporcionando la interfaz y el servidor; SakuraWebApp la presenta dentro de un WebView integrado en Android.
+
+La app intenta mantener la página cargada en memoria mientras su proceso sigue activo, para volver al chat con fluidez. Android puede cerrar procesos en segundo plano cuando necesita memoria; por eso no se promete que la página permanezca siempre viva. En ese caso, la app puede volver a cargar Open WebUI, mientras que las cookies y el almacenamiento web ayudan a conservar el inicio de sesión. Los chats, el perfil y la configuración pertenecen al servidor y permanecen en su carpeta de datos.
 
 ## Estado documentado
 
