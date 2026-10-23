@@ -46,8 +46,8 @@ Las capturas muestran el inicio de sesión, la pantalla principal, el modo de vo
 
 - App: SakuraWebApp **0.1.7** (versionCode 18).
 - Open WebUI: **0.12.3**, versión verificada en la instalación local.
-- Modelo visible en Open WebUI: **Sakura**. El identificador/proveedor del modelo LLM que sirve esa etiqueta no está incluido en la documentación disponible.
-- Voz de ejemplo: Qwen3-TTS Fast compatible con API de OpenAI, modelo **qwen3-tts-clone-0.6b**, puerto local **5052**. Puedes reemplazarlo por otro TTS.
+- Nombre visible del modelo en Open WebUI: **Sakura**. Los registros compartidos muestran que **llama.cpp** carga `SoAIHQ/Qwen3.5-9B-GGUF:Q4_K_M` (Qwen 3.5 de 9B, cuantización Q4_K_M). llama.cpp es el servidor de inferencia; el modelo no pertenece a la familia Llama. El alias Sakura se configura en Open WebUI.
+- Voz de ejemplo (opcional): Qwen3-TTS Fast compatible con API de OpenAI, modelo **qwen3-tts-clone-0.6b**, puerto local **5052**. Puedes usar otro TTS compatible o no configurar voz.
 - Android de referencia: Android 16 (API 36). La app declara minSdk 23 (Android 6.0), targetSdk 36 (Android 16) y compileSdk 37 (Android 17/API 37). compileSdk es la plataforma usada al compilar; no significa que el teléfono necesite Android 17.
 - Herramientas fijadas en el proyecto: Android Gradle Plugin 9.4.1, Gradle 9.6.0, Kotlin 2.2.10 y JDK 17 para ejecutar Gradle. El código Java usa compatibilidad de lenguaje 11.
 - La activación por palabra “Oye, Sakura” queda como idea futura; no está implementada.
