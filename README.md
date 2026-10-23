@@ -1,4 +1,4 @@
-# 🌸 SakuraWebApp 📱
+# 🌸 SakuraWebApp 📱 v0.1.7
 
 SakuraWebApp es una aplicación Android instalada que presenta la interfaz de tu servidor Open WebUI dentro de su propio WebView. No es solo un acceso directo ni una pestaña de Chrome: conserva las cookies, la sesión y el estado de navegación mientras Android mantiene la app en memoria. Así, al volver desde otra aplicación, puedes continuar donde estabas sin esperar a que Chrome restaure una pestaña. Android puede cerrar apps en segundo plano si necesita recursos; en ese caso SakuraWebApp vuelve a cargar Open WebUI y la sesión guardada ayuda a mantener el acceso.
 
