@@ -1,10 +1,12 @@
 # Implementación Android
 
-## Propósito: una app que conserva la sesión
+## Objetivo: Open WebUI como una app Android
 
-Abrir la URL en Chrome depende del estado de la pestaña y del navegador. Android puede descartar una pestaña cuando Chrome queda en segundo plano; al regresar, la página puede recargarse y volver a pedir su estado. SakuraWebApp presenta Open WebUI dentro de un WebView propio, con cookies y DOM storage habilitados y estado de navegación restaurable. La app y Open WebUI siguen siendo procesos distintos: la app no almacena ni reemplaza el perfil del servidor.
+El objetivo general de SakuraWebApp es ofrecer Open WebUI como una aplicación Android completa y cómoda de usar, manteniendo la página dentro de un WebView propio en vez de abrirla como una pestaña de Chrome. Así, mientras Android mantenga vivo el proceso de SakuraWebApp, al volver a la app se conserva la página ya abierta y no se depende del ciclo de vida de una pestaña del navegador. Chrome puede descartar pestañas en segundo plano para liberar memoria y recargarlas al regresar.
 
-Al iniciar una actividad nueva, la app abre la página principal configurada. Si Android recrea la actividad, intenta restaurar el estado del WebView. La pantalla Sakura muestra versión y animación durante al menos tres segundos; una conexión fallida pasa a un mensaje de error después de cinco segundos y ofrece reintentar.
+La app habilita cookies y DOM storage, y guarda/restaura el estado de navegación cuando Android recrea la actividad. Esto ayuda a conservar el inicio de sesión y continuar la navegación. No significa que la página quede permanentemente en RAM: Android puede cerrar cualquier app en segundo plano si necesita recursos. Si eso ocurre, SakuraWebApp vuelve a cargar Open WebUI; la sesión web y los datos del servidor son independientes de que la página siga cargada.
+
+SakuraWebApp es la capa Android y Open WebUI sigue siendo el servidor que contiene la interfaz, cuenta, chats y configuración. La app no copia ni sustituye el perfil del servidor. Al iniciar una actividad nueva, abre la página principal configurada. La pantalla Sakura muestra versión y animación durante al menos tres segundos; una conexión fallida pasa a un mensaje de error después de cinco segundos y ofrece reintentar.
 
 ## Qué host/IP se configura
 
